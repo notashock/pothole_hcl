@@ -16,14 +16,14 @@ public class RepairWorkOrder {
     private Long id;
 
     @JoinColumn(name = "report_id")
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     private PotholeReport potholeReport;
 
-    @OneToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "assigned_to")
     private User assignedTo;
 
-    @OneToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "assigned_by")
     private User assignedBy;
 

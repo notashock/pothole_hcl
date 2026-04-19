@@ -21,6 +21,10 @@ public class PotholeReport {
     @JoinColumn(name = "user_id")
     private User reportedBy;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "location_id", nullable = false)
+    private Location location;
+
     private String description;
 
     @Enumerated(EnumType.STRING)
